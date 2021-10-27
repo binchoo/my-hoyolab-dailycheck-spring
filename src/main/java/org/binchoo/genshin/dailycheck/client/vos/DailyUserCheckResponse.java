@@ -1,38 +1,26 @@
-package org.binchoo.genshin.dailycheck.client.dto;
+package org.binchoo.genshin.dailycheck.client.vos;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class UserCheckedInResponse {
+public class DailyUserCheckResponse {
 
     int retcode;
 
-    UserCheckedInResponseData data;
-
     String message;
+
+    UserCheckedInResponseData data;
 
     public int getRetcode() {
         return retcode;
-    }
-
-    public void setRetcode(int retcode) {
-        this.retcode = retcode;
     }
 
     public UserCheckedInResponseData getData() {
         return data;
     }
 
-    public void setData(UserCheckedInResponseData data) {
-        this.data = data;
-    }
-
     public String getMessage() {
         return message;
-    }
-
-    public void setMessage(String message) {
-        this.message = message;
     }
 
     @JsonIgnoreProperties(ignoreUnknown = true)
@@ -42,10 +30,6 @@ public class UserCheckedInResponse {
 
         public String getCode() {
             return code;
-        }
-
-        public void setCode(String code) {
-            this.code = code;
         }
     }
 

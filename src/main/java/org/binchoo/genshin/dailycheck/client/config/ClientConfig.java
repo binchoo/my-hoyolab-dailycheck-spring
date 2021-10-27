@@ -21,7 +21,7 @@ public class ClientConfig {
 
     @Primary
     @Bean
-    public TaskExecutor taskExecutor(@Value("${executor.threadpool.maxsize}") int maxPoolSize) {
+    public ThreadPoolTaskExecutor asyncTaskExecutor(@Value("${executor.threadpool.maxsize}") int maxPoolSize) {
         ThreadPoolTaskExecutor taskExecutor = new ThreadPoolTaskExecutor();
         taskExecutor.setMaxPoolSize(maxPoolSize);
         return taskExecutor;
@@ -33,5 +33,10 @@ public class ClientConfig {
         ObjectMapper objectMapper = new ObjectMapper();
         objectMapper.registerModule(new JodaModule());
         return objectMapper;
+    }
+
+    @Bean
+    String cronTrigger() {
+        return "0 0 8 * * *";
     }
 }

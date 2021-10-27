@@ -1,7 +1,7 @@
 package org.binchoo.genshin.dailycheck.client.services;
 
-import org.binchoo.genshin.dailycheck.client.dto.MonthlyUserChecksResponse;
-import org.binchoo.genshin.dailycheck.client.dto.UserCheckedInResponse;
+import org.binchoo.genshin.dailycheck.client.vos.MonthlyUserChecksResponse;
+import org.binchoo.genshin.dailycheck.client.vos.DailyUserCheckResponse;
 import org.binchoo.genshin.dailycheck.user.entities.LoginToken;
 import org.binchoo.genshin.dailycheck.user.entities.LoginUser;
 import org.junit.Test;
@@ -37,7 +37,7 @@ public class RestTemplateDailyCheckServiceTest {
     public void getMonthlyDailyCheckStatus_response_OK() {
         LoginUser user = getValidLoginUser();
 
-        MonthlyUserChecksResponse response = service.getMonthlyDailyCheckStatus(user).orElseThrow(()-> new RuntimeException());
+        MonthlyUserChecksResponse response = service.getMonthlyUserChecks(user).orElseThrow(()-> new RuntimeException());
         assertThat(response.getRetcode()).isEqualTo(0);
         assertThat(response.getMessage()).isEqualTo("OK");
 
@@ -49,7 +49,7 @@ public class RestTemplateDailyCheckServiceTest {
     public void postUserCheckedInToday_response_OK() {
         LoginUser user = getValidLoginUser();
 
-        UserCheckedInResponse response = service.postUserCheckedInToday(user).orElseThrow(()-> new RuntimeException());
+        DailyUserCheckResponse response = service.postDailyUserCheck(user).orElseThrow(()-> new RuntimeException());
         assertThat(response.getRetcode()).isLessThan(0);
         assertThat(response.getMessage()).contains("already");
         assertThat(response.getData()).isNull();
@@ -59,7 +59,7 @@ public class RestTemplateDailyCheckServiceTest {
     public void getMonthlyDailyCheckStatus_response_OK_invalid_user() {
         LoginUser user = getInvalidTestUser();
 
-        MonthlyUserChecksResponse response = service.getMonthlyDailyCheckStatus(user).orElseThrow(()-> new RuntimeException());
+        MonthlyUserChecksResponse response = service.getMonthlyUserChecks(user).orElseThrow(()-> new RuntimeException());
         assertThat(response.getRetcode()).isEqualTo(-100);
         assertThat(response.getMessage()).contains("Not logged in");
         assertThat(response.getData()).isNull();
@@ -69,7 +69,7 @@ public class RestTemplateDailyCheckServiceTest {
     public void postUserCheckedInToday_response_OK_invalid_user() {
         LoginUser user = getInvalidTestUser();
 
-        UserCheckedInResponse response = service.postUserCheckedInToday(user).orElseThrow(()-> new RuntimeException());
+        DailyUserCheckResponse response = service.postDailyUserCheck(user).orElseThrow(()-> new RuntimeException());
         assertThat(response.getRetcode()).isEqualTo(-100);
         assertThat(response.getMessage()).contains("Not logged in");
         assertThat(response.getData()).isNull();
