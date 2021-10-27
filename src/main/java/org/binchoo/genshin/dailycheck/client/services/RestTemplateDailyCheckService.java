@@ -68,7 +68,7 @@ public class RestTemplateDailyCheckService implements DailyCheckService {
                 Optional.of(response.getBody()) : Optional.empty();
     }
 
-    @Scheduled(fixedDelay = 50000)
+    @Scheduled(cron = "0 0 8 * * *") // every 8am:00:00
     @Override
     public void batchScheduledDailyCheckInToday() {
         List<LoginUser> users = loginUserDao.findAll();
