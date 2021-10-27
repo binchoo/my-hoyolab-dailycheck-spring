@@ -6,7 +6,8 @@ public class Hk4eResponse {
 
     int retcode;
 
-    @Nullable Object data;
+    @Nullable
+    Object data;
 
     String message;
 

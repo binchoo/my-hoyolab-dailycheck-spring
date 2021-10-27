@@ -2,8 +2,8 @@ package org.binchoo.genshin.dailycheck.client.services;
 
 import org.binchoo.genshin.dailycheck.user.daos.JpaLoginUserDao;
 import org.binchoo.genshin.dailycheck.user.entities.LoginUser;
-import org.binchoo.genshin.dailycheck.client.dto.MonthlyUserChecksResponseData;
-import org.binchoo.genshin.dailycheck.client.dto.UserCheckedInResponseData;
+import org.binchoo.genshin.dailycheck.client.dto.MonthlyUserChecksResponse;
+import org.binchoo.genshin.dailycheck.client.dto.UserCheckedInResponse;
 import org.springframework.core.task.TaskExecutor;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Service;
@@ -29,18 +29,18 @@ public class RestTemplateDailyCheckService implements DailyCheckService {
     }
 
     @Override
-    public Optional<MonthlyUserChecksResponseData> getMonthlyDailyCheckStatus(LoginUser user) {
+    public Optional<MonthlyUserChecksResponse> getMonthlyDailyCheckStatus(LoginUser user) {
         return Optional.empty();
     }
 
     @Override
-    public Optional<UserCheckedInResponseData> postUserCheckedInToday(LoginUser user) {
+    public Optional<UserCheckedInResponse> postUserCheckedInToday(LoginUser user) {
         return Optional.empty();
     }
 
     @Scheduled(fixedDelay = 50000)
     @Override
-    public List<UserCheckedInResponseData> batchScheduledDailyCheckInToday() {
+    public List<UserCheckedInResponse> batchScheduledDailyCheckInToday() {
         return null;
     }
 }
