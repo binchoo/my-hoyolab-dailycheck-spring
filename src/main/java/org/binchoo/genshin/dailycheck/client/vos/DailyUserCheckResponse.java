@@ -3,7 +3,7 @@ package org.binchoo.genshin.dailycheck.client.vos;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class UserCheckedInResponse {
+public class DailyUserCheckResponse {
 
     int retcode;
 

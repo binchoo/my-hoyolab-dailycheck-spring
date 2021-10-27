@@ -3,7 +3,7 @@ package org.binchoo.genshin.dailycheck.client.services;
 import org.binchoo.genshin.dailycheck.user.daos.JpaLoginUserDao;
 import org.binchoo.genshin.dailycheck.user.entities.LoginUser;
 import org.binchoo.genshin.dailycheck.client.vos.MonthlyUserChecksResponse;
-import org.binchoo.genshin.dailycheck.client.vos.UserCheckedInResponse;
+import org.binchoo.genshin.dailycheck.client.vos.DailyUserCheckResponse;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Value;
@@ -41,7 +41,7 @@ public class RestTemplateDailyCheckService implements DailyCheckService {
     }
 
     @Override
-    public Optional<MonthlyUserChecksResponse> getMonthlyDailyCheckStatus(LoginUser user) {
+    public Optional<MonthlyUserChecksResponse> getMonthlyUserChecks(LoginUser user) {
         HttpHeaders headers = new HttpHeaders();
         headers.add("Cookie", user.getLoginCookieString());
 
@@ -55,14 +55,14 @@ public class RestTemplateDailyCheckService implements DailyCheckService {
     }
 
     @Override
-    public Optional<UserCheckedInResponse> postUserCheckedInToday(LoginUser user) {
+    public Optional<DailyUserCheckResponse> postDailyUserCheck(LoginUser user) {
         HttpHeaders headers = new HttpHeaders();
         headers.add("Cookie", user.getLoginCookieString());
 
         HttpEntity requestEntity = new HttpEntity(null, headers);
 
-        ResponseEntity<UserCheckedInResponse> response = restTemplate.exchange(
-                POST_USER_CHECKED_IN, HttpMethod.POST, requestEntity, UserCheckedInResponse.class);
+        ResponseEntity<DailyUserCheckResponse> response = restTemplate.exchange(
+                POST_USER_CHECKED_IN, HttpMethod.POST, requestEntity, DailyUserCheckResponse.class);
 
         return HttpStatus.OK == response.getStatusCode() ?
                 Optional.of(response.getBody()) : Optional.empty();
@@ -75,7 +75,7 @@ public class RestTemplateDailyCheckService implements DailyCheckService {
 
         for (LoginUser user : users) {
             logger.info("Executing scheduled daily-check for " + user);
-            asyncTaskExecutor.execute(()-> postUserCheckedInToday(user));
+            asyncTaskExecutor.execute(()-> postDailyUserCheck(user));
         }
     }
 }

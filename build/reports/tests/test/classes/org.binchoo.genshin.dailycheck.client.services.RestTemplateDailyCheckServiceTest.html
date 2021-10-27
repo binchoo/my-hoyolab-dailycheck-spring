@@ -41,7 +41,7 @@
 </td>
 <td>
 <div class="infoBox" id="duration">
-<div class="counter">1.151s</div>
+<div class="counter">1.313s</div>
 <p>duration</p>
 </div>
 </td>
@@ -79,7 +79,7 @@
 </thead>
 <tr>
 <td class="success">getMonthlyDailyCheckStatus_response_OK</td>
-<td class="success">0.147s</td>
+<td class="success">0.138s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
@@ -89,12 +89,12 @@
 </tr>
 <tr>
 <td class="success">postUserCheckedInToday_response_OK</td>
-<td class="success">0.151s</td>
+<td class="success">0.255s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
 <td class="success">postUserCheckedInToday_response_OK_invalid_user</td>
-<td class="success">0.756s</td>
+<td class="success">0.823s</td>
 <td class="success">passed</td>
 </tr>
 </table>
@@ -102,31 +102,31 @@
 <div id="tab1" class="tab">
 <h2>Standard output</h2>
 <span class="code">
-<pre>20:07:09.855 [Test worker] DEBUG org.springframework.test.context.junit4.SpringJUnit4ClassRunner - SpringJUnit4ClassRunner constructor called with [class org.binchoo.genshin.dailycheck.client.services.RestTemplateDailyCheckServiceTest]
-20:07:09.862 [Test worker] DEBUG org.springframework.test.context.BootstrapUtils - Instantiating CacheAwareContextLoaderDelegate from class [org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate]
-20:07:09.871 [Test worker] DEBUG org.springframework.test.context.BootstrapUtils - Instantiating BootstrapContext using constructor [public org.springframework.test.context.support.DefaultBootstrapContext(java.lang.Class,org.springframework.test.context.CacheAwareContextLoaderDelegate)]
-20:07:09.887 [Test worker] DEBUG org.springframework.test.context.BootstrapUtils - Instantiating TestContextBootstrapper for test class [org.binchoo.genshin.dailycheck.client.services.RestTemplateDailyCheckServiceTest] from class [org.springframework.boot.test.context.SpringBootTestContextBootstrapper]
-20:07:09.901 [Test worker] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Neither @ContextConfiguration nor @ContextHierarchy found for test class [org.binchoo.genshin.dailycheck.client.services.RestTemplateDailyCheckServiceTest], using SpringBootContextLoader
-20:07:09.904 [Test worker] DEBUG org.springframework.test.context.support.AbstractContextLoader - Did not detect default resource location for test class [org.binchoo.genshin.dailycheck.client.services.RestTemplateDailyCheckServiceTest]: class path resource [org/binchoo/genshin/dailycheck/client/services/RestTemplateDailyCheckServiceTest-context.xml] does not exist
-20:07:09.905 [Test worker] DEBUG org.springframework.test.context.support.AbstractContextLoader - Did not detect default resource location for test class [org.binchoo.genshin.dailycheck.client.services.RestTemplateDailyCheckServiceTest]: class path resource [org/binchoo/genshin/dailycheck/client/services/RestTemplateDailyCheckServiceTestContext.groovy] does not exist
-20:07:09.905 [Test worker] INFO org.springframework.test.context.support.AbstractContextLoader - Could not detect default resource locations for test class [org.binchoo.genshin.dailycheck.client.services.RestTemplateDailyCheckServiceTest]: no resource found for suffixes {-context.xml, Context.groovy}.
-20:07:09.906 [Test worker] INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils - Could not detect default configuration classes for test class [org.binchoo.genshin.dailycheck.client.services.RestTemplateDailyCheckServiceTest]: RestTemplateDailyCheckServiceTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
-20:07:09.950 [Test worker] DEBUG org.springframework.test.context.support.ActiveProfilesUtils - Could not find an 'annotation declaring class' for annotation type [org.springframework.test.context.ActiveProfiles] and class [org.binchoo.genshin.dailycheck.client.services.RestTemplateDailyCheckServiceTest]
-20:07:10.031 [Test worker] DEBUG org.springframework.context.annotation.ClassPathScanningCandidateComponentProvider - Identified candidate component class: file [F:\repositories\HoyolabDailyCheckProject\build\classes\java\main\org\binchoo\genshin\dailycheck\Application.class]
-20:07:10.032 [Test worker] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Found @SpringBootConfiguration org.binchoo.genshin.dailycheck.Application for test class org.binchoo.genshin.dailycheck.client.services.RestTemplateDailyCheckServiceTest
-20:07:10.158 [Test worker] DEBUG org.springframework.boot.test.context.SpringBootTestContextBootstrapper - @TestExecutionListeners is not present for class [org.binchoo.genshin.dailycheck.client.services.RestTemplateDailyCheckServiceTest]: using defaults.
-20:07:10.158 [Test worker] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener, org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener]
-20:07:10.185 [Test worker] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@5741405, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@687bc85, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener@b3b9873, org.springframework.boot.test.autoconfigure.SpringBootDependencyInjectionTestExecutionListener@47f7a92d, org.springframework.test.context.support.DirtiesContextTestExecutionListener@628649ea, org.springframework.test.context.transaction.TransactionalTestExecutionListener@595ea2ab, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@ef151f3, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener@74b52fc1, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener@24ace1a4, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener@84b5460, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener@cb1f253, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener@51271f23]
-20:07:10.189 [Test worker] DEBUG org.springframework.test.annotation.ProfileValueUtils - Retrieved @ProfileValueSourceConfiguration [null] for test class [org.binchoo.genshin.dailycheck.client.services.RestTemplateDailyCheckServiceTest]
-20:07:10.189 [Test worker] DEBUG org.springframework.test.annotation.ProfileValueUtils - Retrieved ProfileValueSource type [class org.springframework.test.annotation.SystemProfileValueSource] for class [org.binchoo.genshin.dailycheck.client.services.RestTemplateDailyCheckServiceTest]
-20:07:10.191 [Test worker] DEBUG org.springframework.test.annotation.ProfileValueUtils - Retrieved @ProfileValueSourceConfiguration [null] for test class [org.binchoo.genshin.dailycheck.client.services.RestTemplateDailyCheckServiceTest]
-20:07:10.191 [Test worker] DEBUG org.springframework.test.annotation.ProfileValueUtils - Retrieved ProfileValueSource type [class org.springframework.test.annotation.SystemProfileValueSource] for class [org.binchoo.genshin.dailycheck.client.services.RestTemplateDailyCheckServiceTest]
-20:07:10.192 [Test worker] DEBUG org.springframework.test.annotation.ProfileValueUtils - Retrieved @ProfileValueSourceConfiguration [null] for test class [org.binchoo.genshin.dailycheck.client.services.RestTemplateDailyCheckServiceTest]
-20:07:10.192 [Test worker] DEBUG org.springframework.test.annotation.ProfileValueUtils - Retrieved ProfileValueSource type [class org.springframework.test.annotation.SystemProfileValueSource] for class [org.binchoo.genshin.dailycheck.client.services.RestTemplateDailyCheckServiceTest]
-20:07:10.196 [Test worker] DEBUG org.springframework.test.context.support.AbstractDirtiesContextTestExecutionListener - Before test class: context [DefaultTestContext@55830ee testClass = RestTemplateDailyCheckServiceTest, testInstance = [null], testMethod = [null], testException = [null], mergedContextConfiguration = [WebMergedContextConfiguration@5167bdbc testClass = RestTemplateDailyCheckServiceTest, locations = '{}', classes = '{class org.binchoo.genshin.dailycheck.Application}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{}', propertySourceProperties = '{org.springframework.boot.test.context.SpringBootTestContextBootstrapper=true}', contextCustomizers = set[org.springframework.boot.test.autoconfigure.properties.PropertyMappingContextCustomizer@0, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverContextCustomizerFactory$Customizer@331e888b, org.springframework.boot.test.context.filter.ExcludeFilterContextCustomizer@6435acc8, org.springframework.boot.test.json.DuplicateJsonObjectContextCustomizerFactory$DuplicateJsonObjectContextCustomizer@ab4535c, org.springframework.boot.test.mock.mockito.MockitoContextCustomizer@0, org.springframework.boot.test.web.client.TestRestTemplateContextCustomizer@6dbadd78], resourceBasePath = 'src/main/webapp', contextLoader = 'org.springframework.boot.test.context.SpringBootContextLoader', parent = [null]], attributes = map['org.springframework.test.context.web.ServletTestExecutionListener.activateListener' -&gt; true]], class annotated with @DirtiesContext [false] with mode [null].
-20:07:10.197 [Test worker] DEBUG org.springframework.test.annotation.ProfileValueUtils - Retrieved @ProfileValueSourceConfiguration [null] for test class [org.binchoo.genshin.dailycheck.client.services.RestTemplateDailyCheckServiceTest]
-20:07:10.197 [Test worker] DEBUG org.springframework.test.annotation.ProfileValueUtils - Retrieved ProfileValueSource type [class org.springframework.test.annotation.SystemProfileValueSource] for class [org.binchoo.genshin.dailycheck.client.services.RestTemplateDailyCheckServiceTest]
-20:07:10.218 [Test worker] DEBUG org.springframework.test.context.support.TestPropertySourceUtils - Adding inlined properties to environment: {spring.jmx.enabled=false, org.springframework.boot.test.context.SpringBootTestContextBootstrapper=true, server.port=-1}
+<pre>20:10:55.830 [Test worker] DEBUG org.springframework.test.context.junit4.SpringJUnit4ClassRunner - SpringJUnit4ClassRunner constructor called with [class org.binchoo.genshin.dailycheck.client.services.RestTemplateDailyCheckServiceTest]
+20:10:55.838 [Test worker] DEBUG org.springframework.test.context.BootstrapUtils - Instantiating CacheAwareContextLoaderDelegate from class [org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate]
+20:10:55.847 [Test worker] DEBUG org.springframework.test.context.BootstrapUtils - Instantiating BootstrapContext using constructor [public org.springframework.test.context.support.DefaultBootstrapContext(java.lang.Class,org.springframework.test.context.CacheAwareContextLoaderDelegate)]
+20:10:55.864 [Test worker] DEBUG org.springframework.test.context.BootstrapUtils - Instantiating TestContextBootstrapper for test class [org.binchoo.genshin.dailycheck.client.services.RestTemplateDailyCheckServiceTest] from class [org.springframework.boot.test.context.SpringBootTestContextBootstrapper]
+20:10:55.880 [Test worker] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Neither @ContextConfiguration nor @ContextHierarchy found for test class [org.binchoo.genshin.dailycheck.client.services.RestTemplateDailyCheckServiceTest], using SpringBootContextLoader
+20:10:55.885 [Test worker] DEBUG org.springframework.test.context.support.AbstractContextLoader - Did not detect default resource location for test class [org.binchoo.genshin.dailycheck.client.services.RestTemplateDailyCheckServiceTest]: class path resource [org/binchoo/genshin/dailycheck/client/services/RestTemplateDailyCheckServiceTest-context.xml] does not exist
+20:10:55.885 [Test worker] DEBUG org.springframework.test.context.support.AbstractContextLoader - Did not detect default resource location for test class [org.binchoo.genshin.dailycheck.client.services.RestTemplateDailyCheckServiceTest]: class path resource [org/binchoo/genshin/dailycheck/client/services/RestTemplateDailyCheckServiceTestContext.groovy] does not exist
+20:10:55.885 [Test worker] INFO org.springframework.test.context.support.AbstractContextLoader - Could not detect default resource locations for test class [org.binchoo.genshin.dailycheck.client.services.RestTemplateDailyCheckServiceTest]: no resource found for suffixes {-context.xml, Context.groovy}.
+20:10:55.886 [Test worker] INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils - Could not detect default configuration classes for test class [org.binchoo.genshin.dailycheck.client.services.RestTemplateDailyCheckServiceTest]: RestTemplateDailyCheckServiceTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+20:10:55.928 [Test worker] DEBUG org.springframework.test.context.support.ActiveProfilesUtils - Could not find an 'annotation declaring class' for annotation type [org.springframework.test.context.ActiveProfiles] and class [org.binchoo.genshin.dailycheck.client.services.RestTemplateDailyCheckServiceTest]
+20:10:56.013 [Test worker] DEBUG org.springframework.context.annotation.ClassPathScanningCandidateComponentProvider - Identified candidate component class: file [F:\repositories\HoyolabDailyCheckProject\build\classes\java\main\org\binchoo\genshin\dailycheck\Application.class]
+20:10:56.014 [Test worker] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Found @SpringBootConfiguration org.binchoo.genshin.dailycheck.Application for test class org.binchoo.genshin.dailycheck.client.services.RestTemplateDailyCheckServiceTest
+20:10:56.146 [Test worker] DEBUG org.springframework.boot.test.context.SpringBootTestContextBootstrapper - @TestExecutionListeners is not present for class [org.binchoo.genshin.dailycheck.client.services.RestTemplateDailyCheckServiceTest]: using defaults.
+20:10:56.146 [Test worker] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener, org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener]
+20:10:56.177 [Test worker] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@5741405, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@687bc85, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener@b3b9873, org.springframework.boot.test.autoconfigure.SpringBootDependencyInjectionTestExecutionListener@47f7a92d, org.springframework.test.context.support.DirtiesContextTestExecutionListener@628649ea, org.springframework.test.context.transaction.TransactionalTestExecutionListener@595ea2ab, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@ef151f3, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener@74b52fc1, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener@24ace1a4, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener@84b5460, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener@cb1f253, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener@51271f23]
+20:10:56.181 [Test worker] DEBUG org.springframework.test.annotation.ProfileValueUtils - Retrieved @ProfileValueSourceConfiguration [null] for test class [org.binchoo.genshin.dailycheck.client.services.RestTemplateDailyCheckServiceTest]
+20:10:56.181 [Test worker] DEBUG org.springframework.test.annotation.ProfileValueUtils - Retrieved ProfileValueSource type [class org.springframework.test.annotation.SystemProfileValueSource] for class [org.binchoo.genshin.dailycheck.client.services.RestTemplateDailyCheckServiceTest]
+20:10:56.183 [Test worker] DEBUG org.springframework.test.annotation.ProfileValueUtils - Retrieved @ProfileValueSourceConfiguration [null] for test class [org.binchoo.genshin.dailycheck.client.services.RestTemplateDailyCheckServiceTest]
+20:10:56.183 [Test worker] DEBUG org.springframework.test.annotation.ProfileValueUtils - Retrieved ProfileValueSource type [class org.springframework.test.annotation.SystemProfileValueSource] for class [org.binchoo.genshin.dailycheck.client.services.RestTemplateDailyCheckServiceTest]
+20:10:56.184 [Test worker] DEBUG org.springframework.test.annotation.ProfileValueUtils - Retrieved @ProfileValueSourceConfiguration [null] for test class [org.binchoo.genshin.dailycheck.client.services.RestTemplateDailyCheckServiceTest]
+20:10:56.184 [Test worker] DEBUG org.springframework.test.annotation.ProfileValueUtils - Retrieved ProfileValueSource type [class org.springframework.test.annotation.SystemProfileValueSource] for class [org.binchoo.genshin.dailycheck.client.services.RestTemplateDailyCheckServiceTest]
+20:10:56.188 [Test worker] DEBUG org.springframework.test.context.support.AbstractDirtiesContextTestExecutionListener - Before test class: context [DefaultTestContext@55830ee testClass = RestTemplateDailyCheckServiceTest, testInstance = [null], testMethod = [null], testException = [null], mergedContextConfiguration = [WebMergedContextConfiguration@5167bdbc testClass = RestTemplateDailyCheckServiceTest, locations = '{}', classes = '{class org.binchoo.genshin.dailycheck.Application}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{}', propertySourceProperties = '{org.springframework.boot.test.context.SpringBootTestContextBootstrapper=true}', contextCustomizers = set[org.springframework.boot.test.autoconfigure.properties.PropertyMappingContextCustomizer@0, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverContextCustomizerFactory$Customizer@331e888b, org.springframework.boot.test.context.filter.ExcludeFilterContextCustomizer@6435acc8, org.springframework.boot.test.json.DuplicateJsonObjectContextCustomizerFactory$DuplicateJsonObjectContextCustomizer@ab4535c, org.springframework.boot.test.mock.mockito.MockitoContextCustomizer@0, org.springframework.boot.test.web.client.TestRestTemplateContextCustomizer@6dbadd78], resourceBasePath = 'src/main/webapp', contextLoader = 'org.springframework.boot.test.context.SpringBootContextLoader', parent = [null]], attributes = map['org.springframework.test.context.web.ServletTestExecutionListener.activateListener' -&gt; true]], class annotated with @DirtiesContext [false] with mode [null].
+20:10:56.190 [Test worker] DEBUG org.springframework.test.annotation.ProfileValueUtils - Retrieved @ProfileValueSourceConfiguration [null] for test class [org.binchoo.genshin.dailycheck.client.services.RestTemplateDailyCheckServiceTest]
+20:10:56.190 [Test worker] DEBUG org.springframework.test.annotation.ProfileValueUtils - Retrieved ProfileValueSource type [class org.springframework.test.annotation.SystemProfileValueSource] for class [org.binchoo.genshin.dailycheck.client.services.RestTemplateDailyCheckServiceTest]
+20:10:56.215 [Test worker] DEBUG org.springframework.test.context.support.TestPropertySourceUtils - Adding inlined properties to environment: {spring.jmx.enabled=false, org.springframework.boot.test.context.SpringBootTestContextBootstrapper=true, server.port=-1}
 
   .   ____          _            __ _ _
  /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
@@ -136,58 +136,58 @@
  =========|_|==============|___/=/_/_/_/
  :: Spring Boot ::        (v2.1.6.RELEASE)
 
-2021-10-27 20:07:10.513  INFO 20444 --- [    Test worker] .d.c.s.RestTemplateDailyCheckServiceTest : Starting RestTemplateDailyCheckServiceTest on DESKTOP-RGN2VOK with PID 20444 (started by wnwoq in F:\repositories\HoyolabDailyCheckProject)
-2021-10-27 20:07:10.514  INFO 20444 --- [    Test worker] .d.c.s.RestTemplateDailyCheckServiceTest : The following profiles are active: client
-2021-10-27 20:07:11.503  INFO 20444 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data repositories in DEFAULT mode.
-2021-10-27 20:07:11.578  INFO 20444 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 67ms. Found 1 repository interfaces.
-2021-10-27 20:07:12.105  INFO 20444 --- [    Test worker] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$4d3e0520] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2021-10-27 20:07:12.302  WARN 20444 --- [    Test worker] c.atomikos.jdbc.AbstractDataSourceBean   : AtomikosDataSoureBean 'dataSource': poolSize equals default - this may cause performance problems!
-2021-10-27 20:07:12.499  INFO 20444 --- [    Test worker] c.a.icatch.provider.imp.AssemblerImp     : Loaded jar:file:/C:/Users/wnwoq/.gradle/caches/modules-2/files-2.1/com.atomikos/transactions/4.0.6/1ae19829fd88f5467f45dd1bd9713473f008ff53/transactions-4.0.6.jar!/transactions-defaults.properties
-2021-10-27 20:07:12.503  WARN 20444 --- [    Test worker] c.a.icatch.provider.imp.AssemblerImp     : Thanks for using Atomikos! Evaluate http://www.atomikos.com/Main/ExtremeTransactions for advanced features and professional support
+2021-10-27 20:10:56.545  INFO 18008 --- [    Test worker] .d.c.s.RestTemplateDailyCheckServiceTest : Starting RestTemplateDailyCheckServiceTest on DESKTOP-RGN2VOK with PID 18008 (started by wnwoq in F:\repositories\HoyolabDailyCheckProject)
+2021-10-27 20:10:56.546  INFO 18008 --- [    Test worker] .d.c.s.RestTemplateDailyCheckServiceTest : The following profiles are active: client
+2021-10-27 20:11:07.694  INFO 18008 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data repositories in DEFAULT mode.
+2021-10-27 20:11:07.798  INFO 18008 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 93ms. Found 1 repository interfaces.
+2021-10-27 20:11:08.348  INFO 18008 --- [    Test worker] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$26778027] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-10-27 20:11:08.545  WARN 18008 --- [    Test worker] c.atomikos.jdbc.AbstractDataSourceBean   : AtomikosDataSoureBean 'dataSource': poolSize equals default - this may cause performance problems!
+2021-10-27 20:11:08.758  INFO 18008 --- [    Test worker] c.a.icatch.provider.imp.AssemblerImp     : Loaded jar:file:/C:/Users/wnwoq/.gradle/caches/modules-2/files-2.1/com.atomikos/transactions/4.0.6/1ae19829fd88f5467f45dd1bd9713473f008ff53/transactions-4.0.6.jar!/transactions-defaults.properties
+2021-10-27 20:11:08.764  WARN 18008 --- [    Test worker] c.a.icatch.provider.imp.AssemblerImp     : Thanks for using Atomikos! Evaluate http://www.atomikos.com/Main/ExtremeTransactions for advanced features and professional support
 or register at http://www.atomikos.com/Main/RegisterYourDownload to disable this message and receive FREE tips &amp; advice
 Thanks for using Atomikos! Evaluate http://www.atomikos.com/Main/ExtremeTransactions for advanced features and professional support
 or register at http://www.atomikos.com/Main/RegisterYourDownload to disable this message and receive FREE tips &amp; advice
-2021-10-27 20:07:12.512  INFO 20444 --- [    Test worker] c.a.icatch.provider.imp.AssemblerImp     : USING: com.atomikos.icatch.default_max_wait_time_on_shutdown = 9223372036854775807
-2021-10-27 20:07:12.512  INFO 20444 --- [    Test worker] c.a.icatch.provider.imp.AssemblerImp     : USING: com.atomikos.icatch.allow_subtransactions = true
-2021-10-27 20:07:12.512  INFO 20444 --- [    Test worker] c.a.icatch.provider.imp.AssemblerImp     : USING: com.atomikos.icatch.recovery_delay = 10000
-2021-10-27 20:07:12.512  INFO 20444 --- [    Test worker] c.a.icatch.provider.imp.AssemblerImp     : USING: com.atomikos.icatch.automatic_resource_registration = true
-2021-10-27 20:07:12.512  INFO 20444 --- [    Test worker] c.a.icatch.provider.imp.AssemblerImp     : USING: com.atomikos.icatch.oltp_max_retries = 5
-2021-10-27 20:07:12.512  INFO 20444 --- [    Test worker] c.a.icatch.provider.imp.AssemblerImp     : USING: com.atomikos.icatch.client_demarcation = false
-2021-10-27 20:07:12.512  INFO 20444 --- [    Test worker] c.a.icatch.provider.imp.AssemblerImp     : USING: com.atomikos.icatch.threaded_2pc = false
-2021-10-27 20:07:12.512  INFO 20444 --- [    Test worker] c.a.icatch.provider.imp.AssemblerImp     : USING: com.atomikos.icatch.serial_jta_transactions = true
-2021-10-27 20:07:12.512  INFO 20444 --- [    Test worker] c.a.icatch.provider.imp.AssemblerImp     : USING: com.atomikos.icatch.log_base_dir = F:\repositories\HoyolabDailyCheckProject\transaction-logs
-2021-10-27 20:07:12.512  INFO 20444 --- [    Test worker] c.a.icatch.provider.imp.AssemblerImp     : USING: com.atomikos.icatch.rmi_export_class = none
-2021-10-27 20:07:12.512  INFO 20444 --- [    Test worker] c.a.icatch.provider.imp.AssemblerImp     : USING: com.atomikos.icatch.max_actives = 50
-2021-10-27 20:07:12.512  INFO 20444 --- [    Test worker] c.a.icatch.provider.imp.AssemblerImp     : USING: com.atomikos.icatch.checkpoint_interval = 500
-2021-10-27 20:07:12.513  INFO 20444 --- [    Test worker] c.a.icatch.provider.imp.AssemblerImp     : USING: com.atomikos.icatch.enable_logging = true
-2021-10-27 20:07:12.513  INFO 20444 --- [    Test worker] c.a.icatch.provider.imp.AssemblerImp     : USING: com.atomikos.icatch.log_base_name = tmlog
-2021-10-27 20:07:12.513  INFO 20444 --- [    Test worker] c.a.icatch.provider.imp.AssemblerImp     : USING: com.atomikos.icatch.max_timeout = 300000
-2021-10-27 20:07:12.513  INFO 20444 --- [    Test worker] c.a.icatch.provider.imp.AssemblerImp     : USING: com.atomikos.icatch.trust_client_tm = false
-2021-10-27 20:07:12.513  INFO 20444 --- [    Test worker] c.a.icatch.provider.imp.AssemblerImp     : USING: java.naming.factory.initial = com.sun.jndi.rmi.registry.RegistryContextFactory
-2021-10-27 20:07:12.513  INFO 20444 --- [    Test worker] c.a.icatch.provider.imp.AssemblerImp     : USING: com.atomikos.icatch.tm_unique_name = 10.25.39.115.tm
-2021-10-27 20:07:12.513  INFO 20444 --- [    Test worker] c.a.icatch.provider.imp.AssemblerImp     : USING: com.atomikos.icatch.forget_orphaned_log_entries_delay = 86400000
-2021-10-27 20:07:12.513  INFO 20444 --- [    Test worker] c.a.icatch.provider.imp.AssemblerImp     : USING: com.atomikos.icatch.oltp_retry_interval = 10000
-2021-10-27 20:07:12.513  INFO 20444 --- [    Test worker] c.a.icatch.provider.imp.AssemblerImp     : USING: java.naming.provider.url = rmi://localhost:1099
-2021-10-27 20:07:12.513  INFO 20444 --- [    Test worker] c.a.icatch.provider.imp.AssemblerImp     : USING: com.atomikos.icatch.force_shutdown_on_vm_exit = false
-2021-10-27 20:07:12.513  INFO 20444 --- [    Test worker] c.a.icatch.provider.imp.AssemblerImp     : USING: com.atomikos.icatch.default_jta_timeout = 10000
-2021-10-27 20:07:12.514  INFO 20444 --- [    Test worker] c.a.icatch.provider.imp.AssemblerImp     : Using default (local) logging and recovery...
-2021-10-27 20:07:12.552  INFO 20444 --- [    Test worker] c.a.d.xa.XATransactionalResource         : dataSource: refreshed XAResource
-2021-10-27 20:07:12.735  INFO 20444 --- [    Test worker] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [
+2021-10-27 20:11:08.772  INFO 18008 --- [    Test worker] c.a.icatch.provider.imp.AssemblerImp     : USING: com.atomikos.icatch.default_max_wait_time_on_shutdown = 9223372036854775807
+2021-10-27 20:11:08.772  INFO 18008 --- [    Test worker] c.a.icatch.provider.imp.AssemblerImp     : USING: com.atomikos.icatch.allow_subtransactions = true
+2021-10-27 20:11:08.772  INFO 18008 --- [    Test worker] c.a.icatch.provider.imp.AssemblerImp     : USING: com.atomikos.icatch.recovery_delay = 10000
+2021-10-27 20:11:08.773  INFO 18008 --- [    Test worker] c.a.icatch.provider.imp.AssemblerImp     : USING: com.atomikos.icatch.automatic_resource_registration = true
+2021-10-27 20:11:08.773  INFO 18008 --- [    Test worker] c.a.icatch.provider.imp.AssemblerImp     : USING: com.atomikos.icatch.oltp_max_retries = 5
+2021-10-27 20:11:08.773  INFO 18008 --- [    Test worker] c.a.icatch.provider.imp.AssemblerImp     : USING: com.atomikos.icatch.client_demarcation = false
+2021-10-27 20:11:08.773  INFO 18008 --- [    Test worker] c.a.icatch.provider.imp.AssemblerImp     : USING: com.atomikos.icatch.threaded_2pc = false
+2021-10-27 20:11:08.773  INFO 18008 --- [    Test worker] c.a.icatch.provider.imp.AssemblerImp     : USING: com.atomikos.icatch.serial_jta_transactions = true
+2021-10-27 20:11:08.773  INFO 18008 --- [    Test worker] c.a.icatch.provider.imp.AssemblerImp     : USING: com.atomikos.icatch.log_base_dir = F:\repositories\HoyolabDailyCheckProject\transaction-logs
+2021-10-27 20:11:08.773  INFO 18008 --- [    Test worker] c.a.icatch.provider.imp.AssemblerImp     : USING: com.atomikos.icatch.rmi_export_class = none
+2021-10-27 20:11:08.773  INFO 18008 --- [    Test worker] c.a.icatch.provider.imp.AssemblerImp     : USING: com.atomikos.icatch.max_actives = 50
+2021-10-27 20:11:08.773  INFO 18008 --- [    Test worker] c.a.icatch.provider.imp.AssemblerImp     : USING: com.atomikos.icatch.checkpoint_interval = 500
+2021-10-27 20:11:08.773  INFO 18008 --- [    Test worker] c.a.icatch.provider.imp.AssemblerImp     : USING: com.atomikos.icatch.enable_logging = true
+2021-10-27 20:11:08.773  INFO 18008 --- [    Test worker] c.a.icatch.provider.imp.AssemblerImp     : USING: com.atomikos.icatch.log_base_name = tmlog
+2021-10-27 20:11:08.773  INFO 18008 --- [    Test worker] c.a.icatch.provider.imp.AssemblerImp     : USING: com.atomikos.icatch.max_timeout = 300000
+2021-10-27 20:11:08.773  INFO 18008 --- [    Test worker] c.a.icatch.provider.imp.AssemblerImp     : USING: com.atomikos.icatch.trust_client_tm = false
+2021-10-27 20:11:08.773  INFO 18008 --- [    Test worker] c.a.icatch.provider.imp.AssemblerImp     : USING: java.naming.factory.initial = com.sun.jndi.rmi.registry.RegistryContextFactory
+2021-10-27 20:11:08.773  INFO 18008 --- [    Test worker] c.a.icatch.provider.imp.AssemblerImp     : USING: com.atomikos.icatch.tm_unique_name = 10.25.39.115.tm
+2021-10-27 20:11:08.773  INFO 18008 --- [    Test worker] c.a.icatch.provider.imp.AssemblerImp     : USING: com.atomikos.icatch.forget_orphaned_log_entries_delay = 86400000
+2021-10-27 20:11:08.773  INFO 18008 --- [    Test worker] c.a.icatch.provider.imp.AssemblerImp     : USING: com.atomikos.icatch.oltp_retry_interval = 10000
+2021-10-27 20:11:08.774  INFO 18008 --- [    Test worker] c.a.icatch.provider.imp.AssemblerImp     : USING: java.naming.provider.url = rmi://localhost:1099
+2021-10-27 20:11:08.774  INFO 18008 --- [    Test worker] c.a.icatch.provider.imp.AssemblerImp     : USING: com.atomikos.icatch.force_shutdown_on_vm_exit = false
+2021-10-27 20:11:08.774  INFO 18008 --- [    Test worker] c.a.icatch.provider.imp.AssemblerImp     : USING: com.atomikos.icatch.default_jta_timeout = 10000
+2021-10-27 20:11:08.775  INFO 18008 --- [    Test worker] c.a.icatch.provider.imp.AssemblerImp     : Using default (local) logging and recovery...
+2021-10-27 20:11:08.816  INFO 18008 --- [    Test worker] c.a.d.xa.XATransactionalResource         : dataSource: refreshed XAResource
+2021-10-27 20:11:09.036  INFO 18008 --- [    Test worker] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [
 	name: default
 	...]
-2021-10-27 20:07:12.816  INFO 20444 --- [    Test worker] org.hibernate.Version                    : HHH000412: Hibernate Core {5.3.10.Final}
-2021-10-27 20:07:12.818  INFO 20444 --- [    Test worker] org.hibernate.cfg.Environment            : HHH000206: hibernate.properties not found
-2021-10-27 20:07:12.998  INFO 20444 --- [    Test worker] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.0.4.Final}
-2021-10-27 20:07:13.176  INFO 20444 --- [    Test worker] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
-2021-10-27 20:07:13.403  WARN 20444 --- [    Test worker] org.hibernate.mapping.RootClass          : HHH000038: Composite-id class does not override equals(): org.binchoo.genshin.dailycheck.user.entities.LoginTokenId
-2021-10-27 20:07:13.403  WARN 20444 --- [    Test worker] org.hibernate.mapping.RootClass          : HHH000039: Composite-id class does not override hashCode(): org.binchoo.genshin.dailycheck.user.entities.LoginTokenId
-2021-10-27 20:07:13.916  INFO 20444 --- [    Test worker] o.h.t.schema.internal.SchemaCreatorImpl  : HHH000476: Executing import script 'org.hibernate.tool.schema.internal.exec.ScriptSourceInputNonExistentImpl@718ed95f'
-2021-10-27 20:07:13.920  INFO 20444 --- [    Test worker] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2021-10-27 20:07:14.386  INFO 20444 --- [    Test worker] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'taskExecutor'
-2021-10-27 20:07:15.484  WARN 20444 --- [    Test worker] aWebConfiguration$JpaWebMvcConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2021-10-27 20:07:16.443  INFO 20444 --- [    Test worker] o.s.s.c.ThreadPoolTaskScheduler          : Initializing ExecutorService 'taskScheduler'
-2021-10-27 20:07:16.518  INFO 20444 --- [    Test worker] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 2 endpoint(s) beneath base path '/actuator'
-2021-10-27 20:07:16.606  INFO 20444 --- [    Test worker] .d.c.s.RestTemplateDailyCheckServiceTest : Started RestTemplateDailyCheckServiceTest in 6.38 seconds (JVM running for 9.339)
+2021-10-27 20:11:09.151  INFO 18008 --- [    Test worker] org.hibernate.Version                    : HHH000412: Hibernate Core {5.3.10.Final}
+2021-10-27 20:11:09.153  INFO 18008 --- [    Test worker] org.hibernate.cfg.Environment            : HHH000206: hibernate.properties not found
+2021-10-27 20:11:09.365  INFO 18008 --- [    Test worker] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.0.4.Final}
+2021-10-27 20:11:09.563  INFO 18008 --- [    Test worker] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2021-10-27 20:11:09.822  WARN 18008 --- [    Test worker] org.hibernate.mapping.RootClass          : HHH000038: Composite-id class does not override equals(): org.binchoo.genshin.dailycheck.user.entities.LoginTokenId
+2021-10-27 20:11:09.822  WARN 18008 --- [    Test worker] org.hibernate.mapping.RootClass          : HHH000039: Composite-id class does not override hashCode(): org.binchoo.genshin.dailycheck.user.entities.LoginTokenId
+2021-10-27 20:11:10.420  INFO 18008 --- [    Test worker] o.h.t.schema.internal.SchemaCreatorImpl  : HHH000476: Executing import script 'org.hibernate.tool.schema.internal.exec.ScriptSourceInputNonExistentImpl@3b57e345'
+2021-10-27 20:11:10.425  INFO 18008 --- [    Test worker] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2021-10-27 20:11:10.966  INFO 18008 --- [    Test worker] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'taskExecutor'
+2021-10-27 20:11:12.136  WARN 18008 --- [    Test worker] aWebConfiguration$JpaWebMvcConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-10-27 20:11:13.231  INFO 18008 --- [    Test worker] o.s.s.c.ThreadPoolTaskScheduler          : Initializing ExecutorService 'taskScheduler'
+2021-10-27 20:11:13.342  INFO 18008 --- [    Test worker] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 2 endpoint(s) beneath base path '/actuator'
+2021-10-27 20:11:13.436  INFO 18008 --- [    Test worker] .d.c.s.RestTemplateDailyCheckServiceTest : Started RestTemplateDailyCheckServiceTest in 17.213 seconds (JVM running for 20.356)
 </pre>
 </span>
 </div>
@@ -199,7 +199,7 @@ or register at http://www.atomikos.com/Main/RegisterYourDownload to disable this
 <input id="line-wrapping-toggle" type="checkbox" autocomplete="off"/>
 </label>
 </div>Generated by 
-<a href="http://www.gradle.org">Gradle 6.3</a> at 2021. 10. 27 오후 8:07:17</p>
+<a href="http://www.gradle.org">Gradle 6.3</a> at 2021. 10. 27 오후 8:11:14</p>
 </div>
 </div>
 </body>
