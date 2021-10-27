@@ -1,4 +1,4 @@
-package org.binchoo.genshin.dailycheck.services;
+package org.binchoo.genshin.dailycheck.client.services;
 
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -7,7 +7,7 @@ import org.springframework.test.context.junit4.SpringRunner;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest
-public class DailyCheckServiceImplTest {
+public class RestTemplateDailyCheckServiceTest {
 
     @Autowired
     DailyCheckService service;

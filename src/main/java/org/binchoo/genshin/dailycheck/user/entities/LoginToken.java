@@ -1,4 +1,4 @@
-package org.binchoo.genshin.dailycheck.entities;
+package org.binchoo.genshin.dailycheck.user.entities;
 
 import javax.persistence.EmbeddedId;
 import javax.persistence.Entity;

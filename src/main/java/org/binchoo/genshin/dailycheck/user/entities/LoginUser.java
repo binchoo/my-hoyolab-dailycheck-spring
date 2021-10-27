@@ -1,11 +1,11 @@
-package org.binchoo.genshin.dailycheck.entities;
+package org.binchoo.genshin.dailycheck.user.entities;
 
 import org.hibernate.validator.constraints.Length;
 
 import javax.persistence.*;
 
 @Entity
-public class LoginTokenOwner {
+public class LoginUser {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

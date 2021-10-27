@@ -1,8 +1,9 @@
-package org.binchoo.genshin.dailycheck.services;
+package org.binchoo.genshin.dailycheck.client.services;
 
-import org.binchoo.genshin.dailycheck.entities.LoginToken;
-import org.binchoo.genshin.dailycheck.entities.LoginTokenOwner;
-import org.binchoo.genshin.dailycheck.repos.LoginTokenOwnerRepository;
+import org.binchoo.genshin.dailycheck.user.daos.LoginUserDao;
+import org.binchoo.genshin.dailycheck.user.entities.LoginToken;
+import org.binchoo.genshin.dailycheck.user.entities.LoginUser;
+import org.binchoo.genshin.dailycheck.user.repos.LoginUserRepository;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,23 +17,23 @@ import java.util.List;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest
-public class LoginTokenServiceTest {
+public class LoginUserDaoTest {
 
     @Autowired
-    LoginTokenOwnerRepository repository;
+    LoginUserRepository repository;
 
     @Autowired
-    LoginTokenService service;
+    LoginUserDao service;
 
     @Test
     public void initialDataNotEmpty() {
-        List<LoginTokenOwner> data = repository.findAll();
+        List<LoginUser> data = repository.findAll();
         assertThat(data.size() > 0);
     }
 
     @Test
     public void initialDataNameIsValid() {
-        LoginTokenOwner owner = repository.findByName("binchoo").get();
+        LoginUser owner = repository.findByName("binchoo").get();
         assertThat(owner).isNotNull();
         assertThat(owner.getId()).isEqualTo(1L);
     }
@@ -40,11 +41,11 @@ public class LoginTokenServiceTest {
     @Test
     public void uniqueContraintIsValid() {
         LoginToken duplicatingToken = new LoginToken("123", "456");
-        LoginTokenOwner owner1 = new LoginTokenOwner();
+        LoginUser owner1 = new LoginUser();
         owner1.setName("abc");
         owner1.setLoginToken(duplicatingToken);
 
-        LoginTokenOwner owner2 = new LoginTokenOwner();
+        LoginUser owner2 = new LoginUser();
         owner2.setName("ABC");
         owner2.setLoginToken(duplicatingToken);
 
