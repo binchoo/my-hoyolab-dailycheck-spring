@@ -15,13 +15,10 @@ import java.util.Optional;
 @Service
 public class RestTemplateDailyCheckService implements DailyCheckService {
 
-    //@Autowired
     RestTemplate restTemplate;
 
-    //@Autowired
     JpaLoginUserDao loginUserDao;
 
-    //@Autowired
     TaskExecutor asyncTaskExecutor;
 
     public RestTemplateDailyCheckService(RestTemplate restTemplate,
