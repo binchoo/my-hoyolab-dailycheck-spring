@@ -2,6 +2,7 @@ package org.binchoo.genshin.dailycheck.client.dto;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonProperty;
 import org.joda.time.DateTime;
 import org.springframework.format.annotation.DateTimeFormat;
 
@@ -39,18 +40,20 @@ public class MonthlyUserChecksResponse {
     }
 
     @JsonIgnoreProperties(ignoreUnknown = true)
-    private static class MonthlyUserChecksResponseData {
+    public static class MonthlyUserChecksResponseData {
 
+        @JsonProperty("total_sign_day")
         int totalSignDay;
 
-        @JsonFormat(shape=JsonFormat.Shape.STRING, pattern = "yyyy-mm-dd")
-        @DateTimeFormat(pattern = "yyyy-mm-dd")
         DateTime today;
 
+        @JsonProperty("is_sign")
         boolean isSign;
 
+        @JsonProperty("first_bind")
         boolean firstBind;
 
+        @JsonProperty("is_sub")
         boolean isSub;
 
         String region;
@@ -103,5 +106,4 @@ public class MonthlyUserChecksResponse {
             this.region = region;
         }
     }
-
 }

@@ -36,4 +36,13 @@ public class LoginUser {
     public void setLoginToken(LoginToken loginToken) {
         this.loginToken = loginToken;
     }
+
+    public String getLoginCookieString() {
+        return "ltoken=" + loginToken.getLtoken() + "; ltuid=" + loginToken.getLtuid();
+    }
+
+    @Override
+    public String toString() {
+        return name + "$" + loginToken.getLtoken();
+    }
 }

@@ -10,5 +10,5 @@ import java.util.Optional;
 public interface DailyCheckService {
     Optional<MonthlyUserChecksResponse> getMonthlyDailyCheckStatus(LoginUser user);
     Optional<UserCheckedInResponse> postUserCheckedInToday(LoginUser user);
-    List<UserCheckedInResponse> batchScheduledDailyCheckInToday();
+    void batchScheduledDailyCheckInToday();
 }
