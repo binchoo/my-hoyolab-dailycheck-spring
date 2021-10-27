@@ -135,6 +135,7 @@ buildscript {
                 lang3          : "org.apache.commons:commons-lang3:3.5",
                 guava          : "com.google.guava:guava:$guavaVersion",
                 joda           : "joda-time:joda-time:$jodaVersion",
+                jodaModule     : "com.fasterxml.jackson.datatype:jackson-datatype-joda:2.1.1",
                 usertype       : "org.jadira.usertype:usertype.core:$utVersion",
                 artemis        : "org.apache.activemq:artemis-jms-server:$artemisVersion",
                 javaEl         : "javax.el:javax.el-api:$javaElVersion",
@@ -207,7 +208,7 @@ dependencies {
     }
     compile boot.starterJpa, db.h2, boot.starterWeb, boot.actuator
     compile spring.aspects, spring.data
-    compile misc.joda
+    compile misc.joda, misc.jodaModule
 
     testCompile 'org.springframework.boot:spring-boot-starter-test'
     testCompile group: 'junit', name: 'junit', version: '4.12'

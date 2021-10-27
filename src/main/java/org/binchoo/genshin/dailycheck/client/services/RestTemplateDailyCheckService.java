@@ -2,9 +2,13 @@ package org.binchoo.genshin.dailycheck.client.services;
 
 import org.binchoo.genshin.dailycheck.user.daos.JpaLoginUserDao;
 import org.binchoo.genshin.dailycheck.user.entities.LoginUser;
-import org.binchoo.genshin.dailycheck.client.entities.MonthlyUserChecksResponseData;
-import org.binchoo.genshin.dailycheck.client.entities.UserCheckedInResponseData;
+import org.binchoo.genshin.dailycheck.client.dto.MonthlyUserChecksResponse;
+import org.binchoo.genshin.dailycheck.client.dto.UserCheckedInResponse;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.core.task.TaskExecutor;
+import org.springframework.http.*;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
@@ -15,14 +19,19 @@ import java.util.Optional;
 @Service
 public class RestTemplateDailyCheckService implements DailyCheckService {
 
-    //@Autowired
+    final Logger logger = LoggerFactory.getLogger(RestTemplateDailyCheckService.class);
+
     RestTemplate restTemplate;
 
-    //@Autowired
     JpaLoginUserDao loginUserDao;
 
-    //@Autowired
     TaskExecutor asyncTaskExecutor;
+
+    @Value("${hoyolab.api.get-user-checks-on-this-month.url}")
+    String GET_USER_CHEKCS_ON_THIS_MONTH;
+
+    @Value("${hoyolab.api.post-user-checked-in.url}")
+    String POST_USER_CHECKED_IN;
 
     public RestTemplateDailyCheckService(RestTemplate restTemplate,
                                          JpaLoginUserDao loginUserDao, TaskExecutor asyncTaskExecutor) {
@@ -32,18 +41,41 @@ public class RestTemplateDailyCheckService implements DailyCheckService {
     }
 
     @Override
-    public Optional<MonthlyUserChecksResponseData> getMonthlyDailyCheckStatus(LoginUser user) {
-        return Optional.empty();
+    public Optional<MonthlyUserChecksResponse> getMonthlyDailyCheckStatus(LoginUser user) {
+        HttpHeaders headers = new HttpHeaders();
+        headers.add("Cookie", user.getLoginCookieString());
+
+        HttpEntity requestEntity = new HttpEntity(null, headers);
+
+        ResponseEntity<MonthlyUserChecksResponse> response = restTemplate.exchange(
+                GET_USER_CHEKCS_ON_THIS_MONTH, HttpMethod.GET, requestEntity, MonthlyUserChecksResponse.class);
+
+        return HttpStatus.OK == response.getStatusCode() ?
+                Optional.of(response.getBody()) : Optional.empty();
     }
 
     @Override
-    public Optional<UserCheckedInResponseData> postUserCheckedInToday(LoginUser user) {
-        return Optional.empty();
+    public Optional<UserCheckedInResponse> postUserCheckedInToday(LoginUser user) {
+        HttpHeaders headers = new HttpHeaders();
+        headers.add("Cookie", user.getLoginCookieString());
+
+        HttpEntity requestEntity = new HttpEntity(null, headers);
+
+        ResponseEntity<UserCheckedInResponse> response = restTemplate.exchange(
+                POST_USER_CHECKED_IN, HttpMethod.POST, requestEntity, UserCheckedInResponse.class);
+
+        return HttpStatus.OK == response.getStatusCode() ?
+                Optional.of(response.getBody()) : Optional.empty();
     }
 
-    @Scheduled
+    @Scheduled(cron = "0 0 8 * * *") // every 8am:00:00
     @Override
-    public List<UserCheckedInResponseData> batchScheduledDailyCheckInToday() {
-        return null;
+    public void batchScheduledDailyCheckInToday() {
+        List<LoginUser> users = loginUserDao.findAll();
+
+        for (LoginUser user : users) {
+            logger.info("Executing scheduled daily-check for " + user);
+            asyncTaskExecutor.execute(()-> postUserCheckedInToday(user));
+        }
     }
 }
