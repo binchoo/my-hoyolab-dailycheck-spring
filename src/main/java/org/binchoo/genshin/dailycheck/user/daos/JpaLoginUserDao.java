@@ -13,7 +13,7 @@ import java.util.List;
 @Service
 public class JpaLoginUserDao implements LoginUserDao {
 
-    LoginUserRepository repository = null;
+    LoginUserRepository repository;
 
     public JpaLoginUserDao(LoginUserRepository repository) {
         this.repository = repository;

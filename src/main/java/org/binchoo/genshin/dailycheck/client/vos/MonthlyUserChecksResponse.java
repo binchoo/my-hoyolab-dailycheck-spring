@@ -9,9 +9,9 @@ public class MonthlyUserChecksResponse {
 
     int retcode;
 
-    MonthlyUserChecksResponseData data;
-
     String message;
+
+    MonthlyUserChecksResponseData data;
 
     public int getRetcode() {
         return retcode;
@@ -54,10 +54,6 @@ public class MonthlyUserChecksResponse {
 
         public boolean isSign() {
             return isSign;
-        }
-
-        public void setSign(boolean sign) {
-            isSign = sign;
         }
 
         public boolean isFirstBind() {

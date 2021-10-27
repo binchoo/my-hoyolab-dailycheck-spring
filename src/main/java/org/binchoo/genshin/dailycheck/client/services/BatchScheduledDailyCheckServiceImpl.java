@@ -15,7 +15,7 @@ public class BatchScheduledDailyCheckServiceImpl implements BatchScheduledDailyC
 
     final static Logger logger = LoggerFactory.getLogger(RestTemplateDailyCheckService.class);
 
-    public static int EPOCHS;
+    static int EPOCHS;
 
     LoginUserDao loginUserDao;
 
@@ -36,11 +36,10 @@ public class BatchScheduledDailyCheckServiceImpl implements BatchScheduledDailyC
     public void dailyCheckForAllUser() {
         List<LoginUser> users = loginUserDao.findAll();
 
+        logger.info("dailyCheckForAllUser epcohs: " + EPOCHS++);
         for (LoginUser user: users) {
             asyncTaskExecutor.execute(()-> dailyCheckService.postDailyUserCheck(user));
         }
-
-        EPOCHS++;
     }
 
     static {

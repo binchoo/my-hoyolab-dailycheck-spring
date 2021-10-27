@@ -7,9 +7,9 @@ public class DailyUserCheckResponse {
 
     int retcode;
 
-    UserCheckedInResponseData data;
-
     String message;
+
+    UserCheckedInResponseData data;
 
     public int getRetcode() {
         return retcode;
