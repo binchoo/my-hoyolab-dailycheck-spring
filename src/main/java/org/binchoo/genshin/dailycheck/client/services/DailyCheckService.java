@@ -9,5 +9,4 @@ import java.util.Optional;
 public interface DailyCheckService {
     Optional<MonthlyUserChecksResponse> getMonthlyUserChecks(LoginUser user);
     Optional<DailyUserCheckResponse> postDailyUserCheck(LoginUser user);
-    void batchScheduledDailyCheckInToday();
 }
