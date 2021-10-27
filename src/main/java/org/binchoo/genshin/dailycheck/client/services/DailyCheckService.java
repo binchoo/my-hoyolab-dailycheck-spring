@@ -1,8 +1,8 @@
 package org.binchoo.genshin.dailycheck.client.services;
 
 import org.binchoo.genshin.dailycheck.user.entities.LoginUser;
-import org.binchoo.genshin.dailycheck.client.entities.MonthlyUserChecksResponseData;
-import org.binchoo.genshin.dailycheck.client.entities.UserCheckedInResponseData;
+import org.binchoo.genshin.dailycheck.client.dto.MonthlyUserChecksResponseData;
+import org.binchoo.genshin.dailycheck.client.dto.UserCheckedInResponseData;
 
 import java.util.List;
 import java.util.Optional;

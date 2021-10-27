@@ -2,15 +2,13 @@ package org.binchoo.genshin.dailycheck.client.services;
 
 import org.binchoo.genshin.dailycheck.user.daos.JpaLoginUserDao;
 import org.binchoo.genshin.dailycheck.user.entities.LoginUser;
-import org.binchoo.genshin.dailycheck.client.entities.MonthlyUserChecksResponseData;
-import org.binchoo.genshin.dailycheck.client.entities.UserCheckedInResponseData;
-import org.springframework.beans.factory.annotation.Value;
+import org.binchoo.genshin.dailycheck.client.dto.MonthlyUserChecksResponseData;
+import org.binchoo.genshin.dailycheck.client.dto.UserCheckedInResponseData;
 import org.springframework.core.task.TaskExecutor;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
-import javax.annotation.PostConstruct;
 import java.util.List;
 import java.util.Optional;
 

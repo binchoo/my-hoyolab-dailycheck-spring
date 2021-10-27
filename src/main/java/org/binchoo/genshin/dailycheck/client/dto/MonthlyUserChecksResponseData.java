@@ -1,4 +1,4 @@
-package org.binchoo.genshin.dailycheck.client.entities;
+package org.binchoo.genshin.dailycheck.client.dto;
 
 import org.joda.time.DateTime;
 
