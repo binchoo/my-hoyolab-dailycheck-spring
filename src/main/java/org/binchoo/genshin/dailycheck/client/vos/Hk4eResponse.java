@@ -1,4 +1,4 @@
-package org.binchoo.genshin.dailycheck.client.dto;
+package org.binchoo.genshin.dailycheck.client.vos;
 
 import org.springframework.lang.Nullable;
 

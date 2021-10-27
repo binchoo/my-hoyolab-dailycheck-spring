@@ -2,8 +2,8 @@ package org.binchoo.genshin.dailycheck.client.services;
 
 import org.binchoo.genshin.dailycheck.user.daos.JpaLoginUserDao;
 import org.binchoo.genshin.dailycheck.user.entities.LoginUser;
-import org.binchoo.genshin.dailycheck.client.dto.MonthlyUserChecksResponse;
-import org.binchoo.genshin.dailycheck.client.dto.UserCheckedInResponse;
+import org.binchoo.genshin.dailycheck.client.vos.MonthlyUserChecksResponse;
+import org.binchoo.genshin.dailycheck.client.vos.UserCheckedInResponse;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Value;
