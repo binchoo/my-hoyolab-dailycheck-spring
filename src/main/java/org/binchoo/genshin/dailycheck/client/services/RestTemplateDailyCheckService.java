@@ -15,11 +15,11 @@ public class RestTemplateDailyCheckService implements DailyCheckService {
 
     RestTemplate restTemplate;
 
-    @Value("${hoyolab.api.get-user-checks-on-this-month.url}")
-    String GET_USER_CHEKCS_ON_THIS_MONTH;
+    @Value("${hoyolab.api.get-monthly-user-checks.url}")
+    String GET_MONTHLY_USER_CHECKS;
 
-    @Value("${hoyolab.api.post-user-checked-in.url}")
-    String POST_USER_CHECKED_IN;
+    @Value("${hoyolab.api.post-daily-user-check.url}")
+    String POST_DAILY_USER_CHECK;
 
     public RestTemplateDailyCheckService(RestTemplate restTemplate) {
         this.restTemplate = restTemplate;
@@ -33,7 +33,7 @@ public class RestTemplateDailyCheckService implements DailyCheckService {
         HttpEntity requestEntity = new HttpEntity(null, headers);
 
         ResponseEntity<MonthlyUserChecksResponse> response = restTemplate.exchange(
-                GET_USER_CHEKCS_ON_THIS_MONTH, HttpMethod.GET, requestEntity, MonthlyUserChecksResponse.class);
+                GET_MONTHLY_USER_CHECKS, HttpMethod.GET, requestEntity, MonthlyUserChecksResponse.class);
 
         return HttpStatus.OK == response.getStatusCode() ?
                 Optional.of(response.getBody()) : Optional.empty();
@@ -47,7 +47,7 @@ public class RestTemplateDailyCheckService implements DailyCheckService {
         HttpEntity requestEntity = new HttpEntity(null, headers);
 
         ResponseEntity<DailyUserCheckResponse> response = restTemplate.exchange(
-                POST_USER_CHECKED_IN, HttpMethod.POST, requestEntity, DailyUserCheckResponse.class);
+                POST_DAILY_USER_CHECK, HttpMethod.POST, requestEntity, DailyUserCheckResponse.class);
 
         return HttpStatus.OK == response.getStatusCode() ?
                 Optional.of(response.getBody()) : Optional.empty();
