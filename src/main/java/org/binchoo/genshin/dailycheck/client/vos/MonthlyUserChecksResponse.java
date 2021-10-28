@@ -8,7 +8,6 @@ import org.joda.time.DateTime;
 public class MonthlyUserChecksResponse {
 
     int retcode;
-
     String message;
 
     MonthlyUserChecksResponseData data;

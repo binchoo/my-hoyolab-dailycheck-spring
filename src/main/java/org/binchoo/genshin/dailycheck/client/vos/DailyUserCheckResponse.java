@@ -6,7 +6,6 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 public class DailyUserCheckResponse {
 
     int retcode;
-
     String message;
 
     UserCheckedInResponseData data;
@@ -24,7 +23,7 @@ public class DailyUserCheckResponse {
     }
 
     @JsonIgnoreProperties(ignoreUnknown = true)
-    private static class UserCheckedInResponseData {
+    public static class UserCheckedInResponseData {
 
         String code;
 
