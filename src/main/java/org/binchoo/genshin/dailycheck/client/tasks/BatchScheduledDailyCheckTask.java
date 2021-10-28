@@ -33,7 +33,7 @@ public class BatchScheduledDailyCheckTask {
         this.asyncTaskExecutor = asyncTaskExecutor;
     }
 
-    @Scheduled(fixedDelay = 10000)
+    @Scheduled(fixedDelay = 1000)
     public void dailyCheckForAllUser() {
         List<LoginUser> users = loginUserDao.findAll();
 

@@ -34,9 +34,4 @@ public class ClientConfig {
         objectMapper.registerModule(new JodaModule());
         return objectMapper;
     }
-
-    @Bean
-    String cronTrigger() {
-        return "0 0 8 * * *";
-    }
 }
